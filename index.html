@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Legitimacy Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Legitimacy Checker</h1>
+        <p>Enter a URL to check if it is legitimate or malicious.</p>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL" required>
+            <button type="submit">Check</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <strong>Result:</strong> {{ result }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
